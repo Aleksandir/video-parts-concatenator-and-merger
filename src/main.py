@@ -1,4 +1,3 @@
-# Import the os and moviepy modules
 import os
 import re
 
