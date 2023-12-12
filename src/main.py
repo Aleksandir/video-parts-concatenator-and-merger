@@ -6,6 +6,17 @@ from moviepy.editor import VideoFileClip, concatenate_videoclips
 
 
 def get_unique_filename(base_path, filename):
+    """
+    Generate a unique filename by appending a counter to the base filename if it already exists in the specified directory.
+
+    Args:
+        base_path (str): The base path of the directory where the file is located.
+        filename (str): The original filename.
+
+    Returns:
+        str: The unique filename.
+
+    """
     counter = 1
     name, extension = os.path.splitext(filename)
     new_filename = filename
@@ -18,6 +29,16 @@ def get_unique_filename(base_path, filename):
 
 
 def get_video_files(dir_path):
+    """
+    Get a list of video files (.mp4) in the specified directory.
+
+    Args:
+        dir_path (str): The path to the directory.
+
+    Returns:
+        list: A list of video file names.
+
+    """
     return [
         f
         for f in os.listdir(dir_path)
@@ -26,6 +47,15 @@ def get_video_files(dir_path):
 
 
 def sort_video_files(video_files):
+    """
+    Sorts a list of video file names based on the numeric value in the file name.
+
+    Args:
+        video_files (list): A list of video file names.
+
+    Returns:
+        list: The sorted list of video file names.
+    """
     return sorted(
         video_files,
         key=lambda x: int(re.search(r"(\d+)\.mp4$", x).group(1))
@@ -35,6 +65,16 @@ def sort_video_files(video_files):
 
 
 def create_video_clips(video_files, dir_path):
+    """
+    Create video clips from a list of video files.
+
+    Args:
+        video_files (list): List of video file names.
+        dir_path (str): Directory path where the video files are located.
+
+    Returns:
+        list: List of video clips created from the video files.
+    """
     return [VideoFileClip(os.path.join(dir_path, file)) for file in video_files]
 
 
