@@ -19,7 +19,7 @@ pip install -r requirements.txt
 You can run the script with the following command:
 
 ```sh
-python src/main2.py
+python src/main.py
 ```
 
 The script reads the video files from the specified directory, sorts them, and concatenates them into a single video file. The output video file is saved as `final.mp4` in the current directory.
