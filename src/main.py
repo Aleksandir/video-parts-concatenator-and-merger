@@ -4,9 +4,6 @@ import re
 
 from moviepy.editor import VideoFileClip, concatenate_videoclips
 
-# Define the directory path where the videos are stored
-DIR_PATH = "/Users/aleks/Documents/_GIthub_Repositories/video-processing-script/videos"
-
 
 def get_unique_filename(base_path, filename):
     counter = 1
@@ -42,10 +39,24 @@ def create_video_clips(video_files, dir_path):
 
 
 def main():
-    video_files = get_video_files(DIR_PATH)
+    # Define the directory path where the videos are stored
+    dir_path = input("Enter the directory path: ")
+    while True:
+        for file in os.listdir(dir_path):
+            if file.endswith(".mp4"):
+                print(file)
+
+        proceed = input("\nIs this the correct directory? (y/n): ").lower()
+        if proceed == "y":
+            break
+        else:
+            dir_path = input("Enter the directory path: ")
+
+    video_files = get_video_files(dir_path)
 
     video_files = sort_video_files(video_files)
 
+    print("**File order**\n")
     # Print the list of video files and their index for user verify order
     for i, video in enumerate(video_files):
         print(i, video)
@@ -53,7 +64,7 @@ def main():
     proceed = input("\nProceed? (y/n): ")
     if proceed == "y":
         # Create a list of VideoFileClip objects for each video file
-        clips = create_video_clips(video_files, DIR_PATH)
+        clips = create_video_clips(video_files, dir_path)
 
         if clips:
             final_clip = concatenate_videoclips(clips)
@@ -65,3 +76,6 @@ def main():
             final_clip.write_videofile(os.path.join(base_path, unique_filename))
         else:
             print("No video clips found.")
+
+
+main()
