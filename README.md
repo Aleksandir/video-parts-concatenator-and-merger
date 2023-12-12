@@ -10,17 +10,25 @@ To run this project, follow these steps:
 
 2. Open a command prompt or terminal window.
 
-3. Navigate to the directory where you have downloaded or cloned this project.
+3. Navigate to the directory where you want to save the project.
 
-   1. this can be done by running the following command:
+4. Clone the project repository by running the following command:
 
-      ```sh
-      cd path/to/directory
-      ```
+   ```sh
+   git clone https://github.com/your-username/video-processing-script.git
+   ```
 
-      Replace `path/to/directory` with the actual path to the directory where you have downloaded or cloned this project.
+   Replace `your-username` with your GitHub username.
 
-4. Install the required Python packages by running the following command:
+5. Change into the project directory:
+
+   ```sh
+   cd video-processing-script
+   ```
+
+Note: If you don't have Git installed, you can download it from the official Git website: [git-scm.com](https://git-scm.com/downloads).
+
+6. Install the required Python packages by running the following command:
 
    ```sh
    pip install -r requirements.txt
@@ -28,7 +36,7 @@ To run this project, follow these steps:
 
    This command will install the necessary packages for running the script.
 
-5. Once the packages are installed, run the script with the following command:
+7. Once the packages are installed, run the script with the following command:
 
    ```sh
    python src/main.py
@@ -36,8 +44,8 @@ To run this project, follow these steps:
 
    The script will start processing the video files in the specified directory.
 
-6. Wait for the script to finish processing the videos. It will concatenate them into a single video file named `final.mp4`.
+8. Wait for the script to finish processing the videos. It will concatenate them into a single video file named `final.mp4`.
 
-7. Once the script has finished running, you can find the final video file in the same directory where you ran the script.
+9. Once the script has finished running, you can find the final video file in the same directory where you ran the script.
 
 Note: Make sure that the video files in the specified directory have part numbers in their names in the format "FILENAME Pt 6.mp4", where "6" is the part number. The script will sort the video files based on these part numbers. The part number can be located anywhere in the file name, but it must be the last number before the `.mp4` extension.
