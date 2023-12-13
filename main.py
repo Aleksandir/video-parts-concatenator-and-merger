@@ -98,7 +98,7 @@ def main():
     print("**File order**\n")
     # Print the list of video files and their index for user verify order
     for i, video in enumerate(video_files):
-        print(i, video)
+        print(i + 1, video)
 
     proceed = input("\nProceed? (y/n): ")
     if proceed == "y":
