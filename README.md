@@ -46,6 +46,6 @@ Note: If you don't have Git installed, you can download it from the official Git
 
 8. Wait for the script to finish processing the videos. It will concatenate them into a single video file named `final.mp4`.
 
-9. Once the script has finished running, you can find the final video file in the same directory where you ran the script.
+9. Once the script has finished running, the final video is saved in the directory of the source files as `final`.mp4`.
 
 Note: Make sure that the video files in the specified directory have part numbers in their names in the format "FILENAME Pt 6.mp4", where "6" is the part number. The script will sort the video files based on these part numbers. The part number can be located anywhere in the file name, but it must be the last number before the `.mp4` extension.
