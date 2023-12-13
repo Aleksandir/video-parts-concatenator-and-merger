@@ -78,9 +78,9 @@ def create_video_clips(video_files, dir_path):
 
 
 def main():
-    # Define the directory path where the videos are stored
     dir_path = input("Enter the directory path: ")
     while True:
+        # List all the video files in the directory
         for file in os.listdir(dir_path):
             if file.endswith(".mp4"):
                 print(file)
@@ -91,8 +91,8 @@ def main():
         else:
             dir_path = input("Enter the directory path: ")
 
+    # Get a list of video files in the directory and sort them
     video_files = get_video_files(dir_path)
-
     video_files = sort_video_files(video_files)
 
     print("**File order**\n")
