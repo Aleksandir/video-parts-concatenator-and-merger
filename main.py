@@ -109,10 +109,9 @@ def main():
             final_clip = concatenate_videoclips(clips)
 
             # Write the output video file
-            base_path = "videos/concatinated_vidoes"
             filename = "final.mp4"
-            unique_filename = get_unique_filename(base_path, filename)
-            final_clip.write_videofile(os.path.join(base_path, unique_filename))
+            unique_filename = get_unique_filename(dir_path, filename)
+            final_clip.write_videofile(os.path.join(dir_path, unique_filename))
         else:
             print("No video clips found.")
 
